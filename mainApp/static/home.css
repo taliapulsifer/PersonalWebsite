@@ -1,0 +1,75 @@
+body {
+    height: 100vh;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    font-family: Arial, sans-serif;
+    transition: background-color 0.5s ease;
+}
+
+.intro {
+    text-align: left;
+    color: black;
+    margin: 0 50px;
+}
+
+.profile-picture {
+    width: 800px; /* Set a width */
+    height: 800px; /* Set a height */
+    border-radius: 50%; /* Make the image circular */
+    object-fit: cover; /* Ensure the image covers the area */
+    border: none; /* Optional: Add a border */
+    margin: 20px 130px; /* Add space: 20px top/bottom, 130px left/right */
+}
+
+.collapsible-menu {
+    position: absolute; /* Position the collapsible menu absolutely */
+    right: 20px; /* Space from the right */
+    top: 20px; /* Space from the top */
+    background-color: rgb(255, 255, 255);
+    border: 1px solid #ccc; /* Optional: border around the menu */
+    box-shadow: 1px 2px 3px rgba(0,0,0,0.2);
+    border-radius: 5px; /* Optional: Rounded corners */
+    z-index: 100; /* Ensure it's above other content */
+}
+
+.hamburger-icon {
+    font-size: 24px; /* Size of the hamburger icon */
+    cursor: pointer; /* Change cursor to pointer */
+    line-height: 50px; /* Center the icon vertically */
+    text-align: center; /* Center the icon */
+    padding: 10px; /* Padding around the icon */
+}
+
+.menu-content {
+    display: block; /* Change to block so we can apply transitions */
+    opacity: 0; /* Start hidden */
+    max-height: 0; /* Start with zero height */
+    overflow: hidden; /* Prevent overflow while hidden */
+    font-family: 'Oswald', sans-serif;
+    padding: 0; /* Remove extra padding */
+    transition: opacity 0.5s ease, max-height 0.5s ease; /* Smooth transition */
+}
+
+.menu-content.active {
+    opacity: 1; /* Show the menu */
+    max-height: 500px; /* Set to a value greater than the maximum height of your menu */
+}
+
+.menu-content ul {
+    list-style-type: none; /* Remove bullet points */
+    padding: 0; /* Remove padding */
+    margin: 0; /* Remove margin */
+}
+
+.menu-content a {
+    display: block; /* Make links occupy the full width */
+    padding: 10px; /* Add padding for better click area */
+    text-decoration: none; /* Remove underline */
+    color: black; /* Text color */
+}
+
+.menu-content a:hover {
+    background-color: #f1f1f1; /* Change background on hover */
+}

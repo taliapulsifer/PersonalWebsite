@@ -7,6 +7,41 @@
     <title>Home</title>
 </head>
 <body>
+    <div class="intro">
+        <h1>My name is Talia Pulsifer, and I am a Senior at Texas State University studying Computer Science.</h1>
+    </div>
+    <img src="{% static 'profile_picture.JPG' %}" alt="My Photo" class="profile-picture">
+    <div class="collapsible-menu">
+        <div class="hamburger-icon" id="toggle-menu">&#9776;</div>
+        <div class="menu-content" id="menu-content">
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Resume</a></li>
+                <li><a href="#">Projects</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="footer">
+        
+    </div>
+    <script>
+        const toggleMenu = document.getElementById('toggle-menu');
+        const menuContent = document.getElementById('menu-content');
 
+        toggleMenu.addEventListener('click', () => {
+            // Toggle the display of the menu
+            if (menuContent.style.display === "block") {
+                menuContent.style.display = "none"; // Hide the menu
+            } else {
+                menuContent.classList.toggle('active'); // Show the menu
+            }
+        });
+    </script>
+    <script>
+        const weatherDescription = "{{ weather_disc }}";
+        //const weatherDescription = "cloud"
+    </script>
+    <script src="{% static 'weather.js' %}"></script>
 </body>
 </html>

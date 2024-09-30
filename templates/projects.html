@@ -1,0 +1,19 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet", href="{% static 'projects.css' %}"/>
+    <title>Projects</title>
+</head>
+    <body>
+        <h1>My Projects</h1>
+        <ul>
+          {% for project in projects %}
+            <li>
+              <a href="{{ project.link }}">{{ project.name }}</a> - {{ project.description }}
+            </li>
+          {% endfor %}
+        </ul>
+    </body>
+</html>
